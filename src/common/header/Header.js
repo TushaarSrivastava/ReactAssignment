@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Header.css";
 import logo from "../../assets/logo.svg";
-import Button from '@mui/material/Button';
+import Button from '@material-ui/core/Button';
 import Modal from 'react-modal';
 import BasicTabs from '../basicTabs/BasicTabs';
 import LoginForm from './forms/LoginForm';

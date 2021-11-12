@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, InputLabel, Input, FormHelperText, Button } from '@mui/material';
+import { FormControl, InputLabel, Input, FormHelperText, Button } from '@material-ui/core';
 
 function LoginForm() {
     const [isSubmitSuccess, setIsSubmitSuccesse] = useState(false);

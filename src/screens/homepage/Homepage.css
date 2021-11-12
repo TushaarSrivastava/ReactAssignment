@@ -1,0 +1,8 @@
+.homepage__header {
+   height: 36px;
+   background-color: #ff9999;
+   padding: 8px;
+   display: grid;
+   place-items: center;
+   font-size: 1rem;
+}
