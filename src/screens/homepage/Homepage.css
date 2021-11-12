@@ -6,3 +6,31 @@
    place-items: center;
    font-size: 1rem;
 }
+.upcoming-grid {
+    height: 270px;
+    overflow-y: hidden !important;
+    flex-wrap: nowrap !important;
+    box-sizing: border-box;
+}
+.upcoming-grid .MuiGridListTile-root {
+    width: 300px !important;
+}
+.released {
+    display: flex;
+}
+.released>div{
+    margin: 16px;
+    height: auto;
+}
+.released__movies {
+    width: 76%;
+}
+.released__filters {
+    width: 24%;
+}
+.released-grid {
+    height: auto;
+}
+.released-grid .MuiGridListTile-root {
+    cursor: pointer;
+}

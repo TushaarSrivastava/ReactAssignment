@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FormControl, InputLabel, Input, FormHelperText, Button } from '@material-ui/core';
 
-function LoginForm() {
+function RegisterForm() {
     const [isSubmitSuccess, setIsSubmitSuccesse] = useState(false);
     const [firstName, setFirstName] = useState({ value: "" });
     const [lastName, setLastName] = useState({ value: "" });
@@ -77,4 +77,4 @@ function LoginForm() {
     )
 }
 
-export default LoginForm
+export default RegisterForm;

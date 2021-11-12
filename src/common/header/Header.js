@@ -4,8 +4,8 @@ import logo from "../../assets/logo.svg";
 import Button from '@material-ui/core/Button';
 import Modal from 'react-modal';
 import BasicTabs from '../basicTabs/BasicTabs';
-import LoginForm from './forms/LoginForm';
-import RegisterForm from './forms/RegisterForm';
+import LoginForm from '../components/forms/LoginForm'
+import RegisterForm from '../components/forms/RegisterForm';
 Modal.setAppElement('#root');
 
 function Header() {
