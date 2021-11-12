@@ -6,9 +6,12 @@ import Modal from 'react-modal';
 import BasicTabs from '../basicTabs/BasicTabs';
 import LoginForm from '../components/forms/LoginForm'
 import RegisterForm from '../components/forms/RegisterForm';
+import { useHistory } from "react-router-dom";
+
 Modal.setAppElement('#root');
 
 function Header() {
+    const history = useHistory();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const handleClick = () => {
         setIsLoggedIn(!isLoggedIn);
@@ -23,12 +26,14 @@ function Header() {
             transform: 'translate(-50%, -50%)',
         },
     };
-
+const redirectToHome = () => {
+    history.push("/")
+}
     const contents = [{ content: <LoginForm/>, label: "Login" },
     { content: <RegisterForm />, label: "Register" }]
     return (
         <header className="header">
-            <div className="header__logo">
+            <div className="header__logo" onClick={redirectToHome}>
                 <img src={logo} alt="logo" />
             </div>
             <div className="header__buttons">

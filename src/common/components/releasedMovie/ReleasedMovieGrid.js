@@ -1,60 +1,13 @@
 import React from 'react';
-import { GridListTile, GridListTileBar, GridList } from '@material-ui/core';
+import { GridList } from '@material-ui/core';
+import GridTile from '../GridTile';
 
-function ReleasedMovieGrid() {
+function ReleasedMovieGrid({ data }) {
     return (
         <div className="released__movies">
-        <GridList spacing={16} cellHeight={350} cols={4} className="released-grid">
-           
-           <GridListTile>
-               <img src="//unsplash.it/250/250" width='250' height='250' alt="img" />
-               <GridListTileBar
-                   title={"mak"}
-                   subtitle={"Released Date:"}
-               />
-           </GridListTile>
-           
-           <GridListTile>
-               <img src="//unsplash.it/250/250" width='250' height='250' alt="img" />
-               <GridListTileBar
-                   title={"mak"}
-                   subtitle={"Released Date:"}
-               />
-           </GridListTile>
-           
-           <GridListTile>
-               <img src="//unsplash.it/250/250" width='250' height='250' alt="img" />
-               <GridListTileBar
-                   title={"mak"}
-                   subtitle={"Released Date:"}
-               />
-           </GridListTile>
-           
-           <GridListTile>
-               <img src="//unsplash.it/250/250" width='250' height='250' alt="img" />
-               <GridListTileBar
-                   title={"mak"}
-                   subtitle={"Released Date:"}
-               />
-           </GridListTile>
-           
-           <GridListTile>
-               <img src="//unsplash.it/250/250" width='250' height='250' alt="img" />
-               <GridListTileBar
-                   title={"mak"}
-                   subtitle={"Released Date:"}
-               />
-           </GridListTile>
-           
-           <GridListTile>
-               <img src="//unsplash.it/250/250" width='250' height='250' alt="img" />
-               <GridListTileBar
-                   title={"mak"}
-                   subtitle={"Released Date:"}
-               />
-           </GridListTile>
-      
-       </GridList>
+            <GridList spacing={1} cellHeight={350} cols={1} className="released-grid">
+                {!!data.length && data.map((movie) => <GridTile url={movie.poster_url} name={movie.title} release_date={movie.release_date} height={350} id={movie.id}/>)}
+            </GridList>
         </div>
     )
 }

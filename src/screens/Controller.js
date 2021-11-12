@@ -11,7 +11,7 @@ function Controller() {
                 <Header />
                 <main>
                     <Switch>
-                        <Route exact path="/movie" component={MovieDetails} />
+                        <Route exact path="/movie/:id" component={MovieDetails} />
                         <Route path="/" component={Homepage} />
                     </Switch>
                 </main>

@@ -1,17 +1,21 @@
-import React from 'react';
-import { GridListTile, GridListTileBar, GridList } from '@material-ui/core';
+import React, { useState } from 'react';
+import { GridListTile, GridListTileBar } from '@material-ui/core';
+import { useHistory } from "react-router-dom";
 
-function GridTile() {
-    const [poster_url, setPoster_url] = useState("");
-    const [title, setTitle] = useState("");
+function GridTile({ url, name, release_date, height, id }) {
+    const [poster_url] = useState(url);
+    const [title] = useState(name);
+    const history = useHistory();
     return (
-        <GridListTile>
-                   <img src="//unsplash.it/250/250" width='250' height='250' alt="img" />
-                   <GridListTileBar
-                       title={title}
-                       subtitle={"Released Date:"}
-                   />
-               </GridListTile>
+        <GridListTile onClick={() =>{ console.log(id);
+            history.push("/movie/"+id);
+        }}>
+            <img src={poster_url} height={height} alt="img" />
+            <GridListTileBar
+                title={title}
+                subtitle={`${release_date ? "Released Date:" + release_date : ""}`}
+            />
+        </GridListTile>
     )
 }
 
