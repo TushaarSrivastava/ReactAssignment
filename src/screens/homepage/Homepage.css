@@ -7,13 +7,14 @@
    font-size: 1rem;
 }
 .upcoming-grid {
-    height: 270px;
+    height: 268px;
     overflow-y: hidden !important;
     flex-wrap: nowrap !important;
     box-sizing: border-box;
 }
 .upcoming-grid .MuiGridListTile-root {
     width: 300px !important;
+    height: 250px !important;
 }
 .released {
     display: flex;
@@ -32,5 +33,10 @@
     height: auto;
 }
 .released-grid .MuiGridListTile-root {
+    box-sizing: border-box;
+    margin: 5px;
     cursor: pointer;
+    width: 250px !important;
+    height: 350px !important;
+
 }
