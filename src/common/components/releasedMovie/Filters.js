@@ -13,7 +13,7 @@ const styles = (theme) => ({
         maxWidth: 240,
     },
     formEntry: {
-        margin: theme.spacing(),
+        margin: theme.spacing(2),
     },
     displayFlex: {
         display: "flex",

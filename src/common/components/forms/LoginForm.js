@@ -2,10 +2,10 @@ import { FormControl, InputLabel, Input, FormHelperText, Button } from '@materia
 import React from 'react';
 import './Form.css';
 
-function LoginForm() {
+function LoginForm({handelLoginSuccess}) {
     const handleLogin = (e) => {
         e.preventDefault();
-        alert("loogged in")
+        handelLoginSuccess();
     }
     return (
         <form className="login-form" onSubmit={handleLogin}>
