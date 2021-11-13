@@ -1,4 +1,6 @@
 import React from 'react';
+// using Grid related components throws depricated warning in console 
+// and suggests to use Image related components instead
 import { ImageList } from '@material-ui/core';
 import GridTile from '../GridTile';
 

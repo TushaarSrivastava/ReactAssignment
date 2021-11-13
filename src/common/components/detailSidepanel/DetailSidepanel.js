@@ -1,6 +1,8 @@
 import React from 'react';
 import './DetailSidepanel.css';
 import Rating from './Rating';
+// using Grid related components throws depricated warning in console 
+// and suggests to use Image related components instead
 import { ImageList } from '@material-ui/core';
 import GridTile from '../GridTile';
 import Typography from '@material-ui/core/Typography';

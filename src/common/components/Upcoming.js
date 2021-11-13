@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// using GridList throws depricated warning in console and suggests to use ImageList instead
 import { ImageList } from '@material-ui/core';
 import GridTile from './GridTile';
 

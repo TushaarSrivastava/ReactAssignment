@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// using Grid related components throws depricated warning in console 
+// and suggests to use Image related components instead
 import { ImageListItem, ImageListItemBar } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
 
