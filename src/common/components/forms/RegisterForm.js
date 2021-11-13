@@ -38,9 +38,26 @@ function RegisterForm() {
             isError = true;
             setContact({ value: "", isError: true })
         }
-       if(!isError) {
-            alert("registered");
-            setIsSubmitSuccesse(true);
+        if (!isError) {
+            fetch("http://localhost:8085/api/v1/signup", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json;charset=UTF-8",
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "email_address": email.value,
+                    "first_name": firstName.value,
+                    "last_name": lastName.value,
+                    "mobile_number": contact.value,
+                    "password": password.value
+                })
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    setIsSubmitSuccesse(true);
+                });
+
         }
     }
     return (

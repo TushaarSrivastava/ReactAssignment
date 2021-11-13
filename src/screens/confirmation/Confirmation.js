@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../../common/header/Header";
 import "./Confirmation.css";
 import Typography from "@material-ui/core/Typography";
 import Input from "@material-ui/core/Input";
@@ -48,20 +47,24 @@ const Confirmation = (props) => {
       show_id: props.location.bookingSummary.showId,
       tickets: [props.location.bookingSummary.tickets.toString()],
     });
-
-    fetch(props.baseUrl + "bookings", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "no-cache",
-        Authorization: "Bearer " + sessionStorage.getItem("access-token"),
-      },
-      body: data,
-    })
+    try {
+      fetch(props.baseUrl + "bookings", {
+        method: "POST",
+        headers: {
+          // "Content-Type": "application/json",
+          // "Cache-Control": "no-cache",
+          Authorization: "Bearer " + sessionStorage.getItem("access-token"),
+        },
+        body: data,
+      })
       .then((response) => response.json())
       .then((data) => {
         setBookingId(data.reference_number);
       });
+    }
+    catch (err) {
+      console.log("error->", err)
+    }
 
     setOpen(true);
   };
@@ -75,14 +78,15 @@ const Confirmation = (props) => {
   };
 
   const couponApplyHandler = () => {
-    fetch(props.baseUrl + "movies/" + props.match.params.id, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "no-cache",
-        Authorization: "Bearer " + sessionStorage.getItem("access-token"),
-      },
-    })
+    try {
+      fetch(props.baseUrl + "movies/" + props.match.params.id, {
+        method: "GET",
+        headers: {
+          // "Content-Type": "application/json",
+          // "Cache-Control": "no-cache",
+          Authorization: "Bearer " + sessionStorage.getItem("access-token"),
+        },
+      })
       .then((response) => response.json())
       .then((data) => {
         let discountValue = data.value;
@@ -94,13 +98,16 @@ const Confirmation = (props) => {
           setTotalPrice(originalTotalPrice);
         }
       });
+    }
+    catch (err) {
+      console.log("error->", err)
+    }
   };
 
   const { classes } = props;
 
   return (
     <div className="Details">
-      <Header />
 
       <div className="confirmation marginTop16">
         <div>
@@ -111,7 +118,7 @@ const Confirmation = (props) => {
 
           <Card className="cardStyle">
             <CardContent>
-              <Typography variant="headline" component="h2">
+              <Typography variant="h5" component="h2">
                 SUMMARY
               </Typography>
               <br />

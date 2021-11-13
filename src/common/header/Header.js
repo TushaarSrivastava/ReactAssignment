@@ -38,7 +38,7 @@ const redirectToHome = () => {
                 <img src={logo} alt="logo" />
             </div>
             <div className="header__buttons">
-            {!!match && isLoggedIn && <Button onClick={handleClick} className="header__book-show-button" variant="contained" color="primary">Book Show</Button>}
+            {!!match && <Button onClick={()=> history.push("/bookmovie/"+match.params.id)} className="header__book-show-button" variant="contained" color="primary">Book Show</Button>}
                 {isLoggedIn ?
                     <Button onClick={handleClick} variant="contained">Logout</Button> :
                     <Button onClick={handleClick} variant="contained">Login</Button>}

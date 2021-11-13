@@ -6,17 +6,21 @@ function Released() {
     const [data, setData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-           
-            const URL = 'http://localhost:8085/api/v1/movies?page=1&limit=8&status=RELEASED';
-            fetch(URL).then(response => response.json())
-                .then(data => setData(data.movies));
+            try {
+                const URL = 'http://localhost:8085/api/v1/movies?page=1&limit=8&status=RELEASED';
+                fetch(URL).then(response => response.json())
+                    .then(data => setData(data.movies));
+            }
+            catch (err) {
+                console.log("error->", err)
+            }
         }
         fetchData();
     }, []);
 
     return (
         <main className='released'>
-            <ReleasedMovieGrid data={data}/>
+            <ReleasedMovieGrid data={data} />
             <Filters />
         </main>
     )

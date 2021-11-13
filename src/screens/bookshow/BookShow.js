@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Header from "../../common/header/Header";
 import Typography from "@material-ui/core/Typography";
 import "./BookShow.css";
 import Card from "@material-ui/core/Card";
@@ -35,15 +34,11 @@ const BookShow = (props) => {
 
   useEffect(() => {
     let dataShows = null;
-
-    fetch(props.baseUrl + "movies/" + props.match.params.id + "/shows", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "no-cache",
-      },
-      body: dataShows,
-    })
+    try {
+      fetch(props.baseUrl + "movies/" + props.match.params.id + "/shows", {
+        method: "GET",
+        body: dataShows,
+      })
       .then((response) => response.json())
       .then((response) => {
         setOriginalShows(response.shows);
@@ -62,6 +57,10 @@ const BookShow = (props) => {
         );
         setLocations(newLocations);
       });
+    }
+    catch (err) {
+      console.log("error->", err)
+    }
   }, []);
 
   const locationChangeHandler = (event) => {
@@ -193,7 +192,6 @@ const BookShow = (props) => {
 
   return (
     <div>
-      <Header baseUrl={props.baseUrl} />
       <div className="bookShow">
         <Typography className="back">
           <Link to={"/movie/" + props.match.params.id}>
@@ -203,7 +201,7 @@ const BookShow = (props) => {
 
         <Card className="cardStyle">
           <CardContent>
-            <Typography variant="headline" component="h2">
+            <Typography variant="h5" component="h2">
               BOOK SHOW
             </Typography>
             <br />

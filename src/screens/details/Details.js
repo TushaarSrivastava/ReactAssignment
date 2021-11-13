@@ -21,10 +21,15 @@ function MovieDetails() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const parmas = pathname.split("/")
-            const URL = `http://localhost:8085/api/v1/movies/${parmas[parmas.length - 1]}`;
-            fetch(URL).then(response => response.json())
-                .then(data => setDataToState(data));
+            try {
+                const parmas = pathname.split("/")
+                const URL = `http://localhost:8085/api/v1/movies/${parmas[parmas.length - 1]}`;
+                fetch(URL).then(response => response.json())
+                    .then(data => setDataToState(data));
+            }
+            catch (err) {
+                console.log("error->", err)
+            }
         }
         fetchData();
     }, []);
@@ -63,7 +68,7 @@ function MovieDetails() {
                 <main className="details__movie-details__main-details">
                     <MainDetails {...{ title, genres, duration, release_date, critics_rating, story_line, wiki_url, trailer_url }} />
                 </main>
-                <aside className="details__movie-details__sidepane"><DetailSidepanel {...{artists}}/></aside>
+                <aside className="details__movie-details__sidepane"><DetailSidepanel {...{ artists }} /></aside>
             </section>
         </div>
     )

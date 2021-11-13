@@ -13,9 +13,9 @@ function MainDetails({ title, genres = [], duration, release_date, critics_ratin
     };
     return (
         <div className="main-details">
-            <Typography variant="caption"><h2>{title}</h2></Typography>
+            <Typography variant="h6" component="h2">{title}</Typography>
             <Typography>
-                <b>Genre</b>: {genres.map((genre, i) => <Fragment key={genre}>genre + `${i !== genres.length - 1 ? ', ' : ''}`</Fragment>)}
+                <b>Genre</b>: {genres.map((genre, i) => <Fragment key={genre}>{genre}{i !== genres.length - 1 ? ', ' : ''}</Fragment>)}
             </Typography>
             <Typography>
                 <b>Duration</b>: {duration}
