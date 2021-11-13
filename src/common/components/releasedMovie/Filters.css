@@ -1,0 +1,9 @@
+.released .MuiFormControl-root {
+    display: flex;
+}
+.released .MuiPaper-root {
+    height: 385px;
+}
+.released .MuiButton-containedPrimary {
+    width: 100%;
+}

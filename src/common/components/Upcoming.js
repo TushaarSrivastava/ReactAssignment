@@ -20,7 +20,7 @@ function Upcoming() {
 
     return (
         <ImageList rowHeight={250} cols={6} className="upcoming-grid">
-            {!!data.length && data.map((movie) => <GridTile key={movie.title} url={movie.poster_url} name={movie.title} height={250} />)}
+            {!!data.length && data.map((movie) => <GridTile enableClick={false} key={movie.title} url={movie.poster_url} name={movie.title} height={250} />)}
         </ImageList>
     )
 }
