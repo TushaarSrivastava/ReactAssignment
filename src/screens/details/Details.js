@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import { useLocation } from 'react-router';
 import MainDetails from '../../common/components/movieDetails/MainDetails';
+import DetailSidepanel from '../../common/components/detailSidepanel/DetailSidepanel';
 import './Details.css';
 
 function MovieDetails() {
@@ -16,6 +17,7 @@ function MovieDetails() {
     const [story_line, setStory_line] = useState("");
     const [wiki_url, setWiki_url] = useState("");
     const [trailer_url, setTrailer_url] = useState("");
+    const [artists, setArtists] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -36,7 +38,8 @@ function MovieDetails() {
             rating,
             storyline,
             wiki_url,
-            trailer_url } = data;
+            trailer_url,
+            artists } = data;
         setTitle(title);
         setGenres(genres);
         setDuration(duration);
@@ -45,6 +48,7 @@ function MovieDetails() {
         setStory_line(storyline);
         setWiki_url(wiki_url);
         setTrailer_url(trailer_url);
+        setArtists(artists);
     }
 
     return (
@@ -57,9 +61,9 @@ function MovieDetails() {
                     <img src={data.poster_url} alt="poster" />
                 </aside>
                 <main className="details__movie-details__main-details">
-                    <MainDetails {...{title, genres, duration, release_date, critics_rating, story_line, wiki_url, trailer_url}} />
-                    </main>
-                <aside className="details__movie-details__sidepane">rate</aside>
+                    <MainDetails {...{ title, genres, duration, release_date, critics_rating, story_line, wiki_url, trailer_url }} />
+                </main>
+                <aside className="details__movie-details__sidepane"><DetailSidepanel {...{artists}}/></aside>
             </section>
         </div>
     )

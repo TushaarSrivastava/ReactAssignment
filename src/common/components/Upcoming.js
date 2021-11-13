@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GridList } from '@material-ui/core';
+import { ImageList } from '@material-ui/core';
 import GridTile from './GridTile';
 
 function Upcoming() {
@@ -15,9 +15,9 @@ function Upcoming() {
     }, []);
 
     return (
-        <GridList cellHeight={250} cols={6} className="upcoming-grid">
-            {!!data.length && data.map((movie) =><GridTile url={movie.poster_url} name={movie.title} height={250}/>)}
-        </GridList>
+        <ImageList rowHeight={250} cols={6} className="upcoming-grid">
+            {!!data.length && data.map((movie) =><GridTile key={movie.title} url={movie.poster_url} name={movie.title} height={250}/>)}
+        </ImageList>
     )
 }
 

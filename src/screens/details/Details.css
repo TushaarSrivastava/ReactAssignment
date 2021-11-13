@@ -1,5 +1,8 @@
+.details {
+    margin: 0 24px;
+}
 .details__back-button {
-    margin: 8px 0 0 24px !important;
+    margin: 8px 0 0 0 !important;
     height: 24px;
     cursor: pointer;
 }

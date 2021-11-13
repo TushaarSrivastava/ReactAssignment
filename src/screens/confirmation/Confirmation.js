@@ -19,8 +19,8 @@ import { Link } from "react-router-dom";
 
 const styles = (theme) => ({
   close: {
-    width: theme.spacing.unit * 4,
-    height: theme.spacing.unit * 4,
+    width: theme.gap.unit * 4,
+    height: theme.gap.unit * 4,
   },
   success: {
     color: green[600],

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
 import YouTube from 'react-youtube';
 import './MovieDetails.css';
@@ -12,10 +12,10 @@ function MainDetails({ title, genres = [], duration, release_date, critics_ratin
         },
     };
     return (
-        <div>
+        <div className="main-details">
             <Typography variant="caption"><h2>{title}</h2></Typography>
             <Typography>
-                <b>Genre</b>: {genres.map((genre, i) => genre + `${i !== genres.length - 1 ? ', ' : ''}`)}
+                <b>Genre</b>: {genres.map((genre, i) => <Fragment key={genre}>genre + `${i !== genres.length - 1 ? ', ' : ''}`</Fragment>)}
             </Typography>
             <Typography>
                 <b>Duration</b>: {duration}

@@ -12,7 +12,7 @@
     flex-wrap: nowrap !important;
     box-sizing: border-box;
 }
-.upcoming-grid .MuiGridListTile-root {
+.upcoming-grid .MuiImageListItem-root {
     width: 300px !important;
     height: 250px !important;
 }
@@ -32,7 +32,7 @@
 .released-grid {
     height: auto;
 }
-.released-grid .MuiGridListTile-root {
+.released-grid .MuiImageListItem-root {
     box-sizing: border-box;
     margin: 5px;
     cursor: pointer;

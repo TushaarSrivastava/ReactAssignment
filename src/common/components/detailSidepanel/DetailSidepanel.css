@@ -1,0 +1,19 @@
+.sideppanel {
+    display: flex;
+    flex-direction: column;
+}
+.artists-grid {
+    width:100%;
+}
+.artists-grid .MuiImageListItem-root {
+    height: 180px;
+    width: 150px;
+    margin:0 10px 10px 0;
+}
+.sideppanel__artist-heading {
+    margin: 16px 0;
+    display: block;
+}
+.yellow {
+    color: yellow;
+}
