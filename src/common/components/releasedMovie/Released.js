@@ -13,7 +13,7 @@ function Released() {
         }
         fetchData();
     }, []);
-    console.log(data)
+
     return (
         <main className='released'>
             <ReleasedMovieGrid data={data}/>

@@ -10,6 +10,9 @@
    background-color: #ff7f7f;
    animation: logo 8s linear infinite alternate;
 }
+.header__buttons button {
+    margin: 0 5px;
+}
 @keyframes logo {
     from {transform: rotateY(0deg);;}
     to {transform: rotateY(180deg);}

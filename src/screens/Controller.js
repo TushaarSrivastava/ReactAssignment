@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../common/header/Header';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import MovieDetails from './movieDetails/MovieDetails';
+import MovieDetails from './details/Details';
 import Homepage from './homepage/Homepage';
 
 function Controller() {

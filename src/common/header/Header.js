@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import BasicTabs from '../basicTabs/BasicTabs';
 import LoginForm from '../components/forms/LoginForm'
 import RegisterForm from '../components/forms/RegisterForm';
-import { useHistory } from "react-router-dom";
+import { useHistory, useRouteMatch } from "react-router-dom";
 
 Modal.setAppElement('#root');
 
@@ -16,6 +16,7 @@ function Header() {
     const handleClick = () => {
         setIsLoggedIn(!isLoggedIn);
     }
+    const match = useRouteMatch("/movie/:id");
     const customStyles = {
         content: {
             top: '50%',
@@ -37,10 +38,10 @@ const redirectToHome = () => {
                 <img src={logo} alt="logo" />
             </div>
             <div className="header__buttons">
+            {!!match && isLoggedIn && <Button onClick={handleClick} className="header__book-show-button" variant="contained" color="primary">Book Show</Button>}
                 {isLoggedIn ?
                     <Button onClick={handleClick} variant="contained">Logout</Button> :
                     <Button onClick={handleClick} variant="contained">Login</Button>}
-                    <Button onClick={handleClick} variant="contained">Book Show</Button>
             </div>
 
             <Modal

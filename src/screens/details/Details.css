@@ -1,0 +1,21 @@
+.details__back-button {
+    margin: 8px 0 0 24px !important;
+    height: 24px;
+    cursor: pointer;
+}
+.details__back-button a {
+    text-decoration: none;
+    color: black;
+}
+.details__movie-details {
+    display: flex;
+}
+.details__movie-details__poster {
+    flex: 2;
+}
+.details__movie-details__main-details {
+    flex: 6;
+}
+.details__movie-details__sidepane {
+    flex: 2;
+}
